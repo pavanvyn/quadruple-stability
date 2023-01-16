@@ -18,7 +18,7 @@ Here, the arguments qi , qm , qo , alio , almo , ei , em , eo , iim , iio and im
 
 The parameter ranges should be restricted to the values given in Section \ref{sec:mlp} for optimal results.
 
-It is also possible to import the two MLP classifiers to a custom \verb |python3| script. The input parameters can all be floating point numbers or \verb |numpy| arrays, as shown in the sample script below:
+It is also possible to import the two MLP classifiers to a custom python3 script. The input parameters can all be floating point numbers or numpy arrays, as shown in the sample script below:
 
     import numpy as np
     from mlp_classify import mlp_classifier_2p2
