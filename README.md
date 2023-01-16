@@ -1,4 +1,4 @@
-This repository contains a simple python3 code to check if a given configuration of wither a 2+2 or a 3+1 quadruple system is dynamically stable. Please refer to Vynatheya et al. (2023) (see _link_) for details regarding the multi-layer perceptron classifier.
+This repository contains two simple python3 modules to check if a given configuration of either a 2+2 or a 3+1 quadruple system, respectively, is dynamically stable. Please refer to Vynatheya et al. (2023) (see _link_) for details regarding the multi-layer perceptron classifier.
 
 The only non-basic package require to use the code is scikit-learn, which can be installed using the following terminal command:
 
