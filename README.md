@@ -1,8 +1,8 @@
 This repository contains two simple python3 modules to check if a given configuration of either a 2+2 or a 3+1 quadruple system, respectively, is dynamically stable. Please refer to Vynatheya et al. (2022) (see https://ui.adsabs.harvard.edu/abs/2022MNRAS.516.4146V/abstract) and Vynatheya et al. (2023) (see https://ui.adsabs.harvard.edu/abs/2023arXiv230109930V/abstract) for details regarding the multi-layer perceptron classifier.
 
-The only non-basic package require to use the code is scikit-learn, which can be installed using the following terminal command:
+The only non-basic package require to use the code is a compatible version (1.0.2) of the scikit-learn package (the latest version should also work, but throws a warning of potential incompatibility), which can be installed using the following terminal command:
 
-    pip3 install scikit-learn
+    pip3 install -v scikit-learn==1.0.2
     
 To classify 2+2 quadruples, a sample \verb |python3| terminal command is as follows:
 
