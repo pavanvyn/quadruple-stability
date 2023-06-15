@@ -3,8 +3,12 @@ This repository contains two simple python3 modules to check if a given configur
 The only non-basic package require to use the code is a compatible version (1.0.2) of the scikit-learn package (the latest version should also work, but throws a warning of potential incompatibility), which can be installed using the following terminal command:
 
     pip3 install -v scikit-learn==1.0.2
+
+Update: The version 1.0.2 pickle files have been replaced by new files compatible with the latest version of scikit-learn (1.2.2), so installing the old version is not necessary. However, the old pickle files are still retained in the repository, if required. Thus, the following command is sufficient:
+
+    pip3 install scikit-learn
     
-To classify 2+2 quadruples, a sample \verb |python3| terminal command is as follows:
+To classify 2+2 quadruples, a sample python3 terminal command is as follows:
 
     python3 classify_quad_2p2.py -qi1 1.0 -qi2 1.0 -qo 1.0 -ali1o 0.2 -ali2o 0.2 -ei1 0.0 -ei2 0.0 -eo 0.0 -ii1i2 0.0 -ii1o 0.0 -ii2o 0.0
         
