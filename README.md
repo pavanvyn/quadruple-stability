@@ -25,6 +25,7 @@ The parameter (described in Section 2 of the quadruples paper) ranges should be 
 It is also possible to import the two MLP classifiers to a custom python3 script. The input parameters can all be floating point numbers or numpy arrays, as shown in the sample script below:
 
     import numpy as np
+    import sklearn
     from classify_quad_2p2 import mlp_classifier_2p2
     from classify_quad_3p1 import mlp_classifier_3p1
 
