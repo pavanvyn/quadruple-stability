@@ -2,13 +2,10 @@
 
 This repository contains two simple `python3` (3.10.0 or higher) modules to check if a given configuration of either a 2+2 or a 3+1 quadruple system, respectively, is dynamically stable. Please refer to Vynatheya et al. (2022) (see https://ui.adsabs.harvard.edu/abs/2022MNRAS.516.4146V/abstract) and Vynatheya et al. (2023) (see https://ui.adsabs.harvard.edu/abs/2023arXiv230109930V/abstract) for details regarding the multi-layer perceptron classifier.
 
-The only non-basic package require to use the code is a compatible version (1.0.2) of the scikit-learn package (the latest version should also work, but throws a warning of potential incompatibility), which can be installed using the following terminal command:
+The only non-basic package require to use the code is a compatible version (1.0.2 or 1.2.2) of the scikit-learn package (the latest version should also work, but throws a warning of potential incompatibility), which can be installed using the following terminal command:
 
-    pip3 install -v scikit-learn==1.0.2
-
-Edit: The version 1.0.2 pickle files have been replaced by new files compatible with the latest version of scikit-learn (1.2.2), so installing the old version is not necessary. However, the old pickle files are still retained in the repository, if required. Thus, the following command is sufficient:
-
-    pip3 install scikit-learn
+    # pip3 install -v scikit-learn==1.0.2
+    pip3 install -v scikit-learn==1.2.2
     
 To classify 2+2 quadruples, a sample python3 terminal command is as follows:
 
@@ -34,8 +31,8 @@ It is also possible to import the two MLP classifiers to a custom python3 script
     # 2+2 quadruples: generate initial numpy arrays
     # 3+1 quadruples: generate initial numpy arrays
 
-    mlp_2p2_pfile = "./mlp_model_2p2_ghost.pkl"
-    mlp_3p1_pfile = "./mlp_model_3p1_ghost.pkl"
+    mlp_2p2_pfile = "./mlp_model_2p2_ghost_v1.2.2.pkl"
+    mlp_3p1_pfile = "./mlp_model_3p1_ghost_v1.2.2.pkl"
 
     mlp_2p2_stable = mlp_classifier_2p2(mlp_2p2_pfile, qi1, qi2, qo, ali1o, ali2o, ei1, ei2, eo, ii1i2, ii1o, ii2o)
     mlp_3p1_stable = mlp_classifier_3p1(mlp_2p2_pfile, qi, qm, qo, alim, almo, ei, em, eo, iim, iio, imo)
