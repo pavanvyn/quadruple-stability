@@ -33,7 +33,7 @@ if __name__ == '__main__':
     parser.add_argument("-ii2o","--inc_inner2_outer",help="mutual inclination of inner2-outer, in radian", default=0.0, type=float)
     args = parser.parse_args()
 
-    mlp_pfile = "./mlp_model_2p2_ghost.pkl"
+    mlp_pfile = "./mlp_model_2p2_ghost_v1.2.2.pkl"
 
     mlp_stable = mlp_classifier_2p2(mlp_pfile, args.mratio_inner1, args.mratio_inner2, args.mratio_outer, args.aratio_inner1_outer, args.aratio_inner2_outer, \
                                     args.ecc_inner1, args.ecc_inner2, args.ecc_outer, args.inc_inner1_inner2, args.inc_inner1_outer, args.inc_inner2_outer)
