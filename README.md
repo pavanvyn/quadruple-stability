@@ -24,7 +24,7 @@ The parameter (described in Section 2 of the quadruples paper) ranges should be 
 It is also possible to import the two MLP classifiers to a custom python3 script. The input parameters can all be floating point numbers or numpy arrays, as shown in the sample script below:
 
     import numpy as np
-    import sklearn
+    # 'import sklearn' is not necessary, but scikit-learn needs to be installed
     from classify_quad_2p2 import mlp_classifier_2p2
     from classify_quad_3p1 import mlp_classifier_3p1
 
@@ -37,7 +37,7 @@ It is also possible to import the two MLP classifiers to a custom python3 script
     mlp_2p2_stable = mlp_classifier_2p2(mlp_2p2_pfile, qi1, qi2, qo, ali1o, ali2o, ei1, ei2, eo, ii1i2, ii1o, ii2o)
     mlp_3p1_stable = mlp_classifier_3p1(mlp_2p2_pfile, qi, qm, qo, alim, almo, ei, em, eo, iim, iio, imo)
 
-    # returns True if stable, False if unstable
+    # mlp_2p2_stable, mlp_3p1_stable store True if stable, False if unstable
 
 If these classification models are used for research, please cite our papers - https://ui.adsabs.harvard.edu/abs/2023arXiv230109930V/abstract (mlp_model_2p2_ghost.pkl and mlp_model_3p1_ghost.pkl).
 
