@@ -33,7 +33,7 @@ if __name__ == '__main__':
     parser.add_argument("-imo","--inc_intermediate_outer",help="mutual inclination of intermediate-outer, in radian", default=0.0, type=float)
     args = parser.parse_args()
 
-    mlp_pfile = "./mlp_model_3p1_ghost.pkl"
+    mlp_pfile = "./mlp_model_3p1_ghost_v1.2.2.pkl"
 
     mlp_stable = mlp_classifier_3p1(mlp_pfile, args.mratio_inner, args.mratio_intermediate, args.mratio_outer, args.aratio_inner_intermediate, args.aratio_intermediate_outer, \
                                     args.ecc_inner, args.ecc_intermediate, args.ecc_outer, args.inc_inner_intermediate, args.inc_inner_outer, args.inc_intermediate_outer)
