@@ -59,25 +59,13 @@ The `-I` flag is only necessary if the `python` header files are not in the syst
         char mlp_2p2_pfile[] = "./mlp_model_3p1_ghost_v1.2.2.pkl";
         char mlp_3p1_pfile[] = "./mlp_model_2p2_ghost_v1.2.2.pkl";
 
-        double mratio_inner1, mratio_inner2, mratio_outer, 
-            aratio_inner1_outer, aratio_inner2_outer, 
-            ecc_inner1, ecc_inner2, ecc_outer, 
-            inc_inner1_inner2, inc_inner1_outer, inc_inner2_outer;
-        double mratio_inner, mratio_intermediate, mratio_outer, 
-            aratio_inner_intermediate, aratio_intermediate_outer,
-            ecc_inner, ecc_intermediate, ecc_outer, 
-            inc_inner_intermediate, inc_inner_outer, inc_intermediate_outer;
+        double qi1, qi2, qo, ali1o, ali2o, ei1, ei2, eo, ii1i2, ii1o, ii2o; // for 2+2
+        double qi, qm, qo, alim, almo, ei, em, eo, iim, iio, imo; // for 3+1
             
         // define these quantities
 
-        int mlp_2p2_stable = mlp_classifier_2p2(mlp_2p2_pfile, mratio_inner1, mratio_inner2, mratio_outer, 
-                                        aratio_inner1_outer, aratio_inner2_outer, 
-                                        ecc_inner1, ecc_inner2, ecc_outer, 
-                                        inc_inner1_inner2, inc_inner1_outer, inc_inner2_outer);
-        int mlp_3p1_stable = mlp_classifier_3p1(mlp_3p1_pfile, mratio_inner, mratio_intermediate, mratio_outer, 
-                                        aratio_inner_intermediate, aratio_intermediate_outer, 
-                                        ecc_inner, ecc_intermediate, ecc_outer, 
-                                        inc_inner_intermediate, inc_inner_outer, inc_intermediate_outer);
+        int mlp_2p2_stable = mlp_classifier_2p2(mlp_2p2_pfile, qi1, qi2, qo, ali1o, ali2o, ei1, ei2, eo, ii1i2, ii1o, ii2o);
+        int mlp_3p1_stable = mlp_classifier_3p1(mlp_3p1_pfile, qi, qm, qo, alim, almo, ei, em, eo, iim, iio, imo);
 
         // mlp_2p2_stable, mlp_3p1_stable store 1 if stable, 0 if unstable
 
