@@ -8,7 +8,7 @@ The only non-basic package require to use the code is a compatible version (1.0.
     pip3 install -v scikit-learn==1.2.2
 
     
-## Implementing the classifier in `python3` (simplest option)
+### Implementing the classifier in `python3` (simplest option)
 
 To classify 2+2 quadruples, a sample python3 terminal command is as follows:
 
@@ -43,7 +43,7 @@ It is also possible to import the two MLP classifiers to a custom python3 script
     # mlp_2p2_stable, mlp_3p1_stable store True if stable, False if unstable
 
 
-## Citing our work
+### Citing our work
 
 If these classification models are used for research, please cite our papers - https://ui.adsabs.harvard.edu/abs/2023arXiv230109930V/abstract (mlp_model_2p2_ghost.pkl and mlp_model_3p1_ghost.pkl).
 
