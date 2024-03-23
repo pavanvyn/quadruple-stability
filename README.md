@@ -6,7 +6,10 @@ The only non-basic package require to use the code is a compatible version (1.0.
 
     # pip3 install -v scikit-learn==1.0.2
     pip3 install -v scikit-learn==1.2.2
+
     
+## Implementing the classifier in `python3` (simplest option)
+
 To classify 2+2 quadruples, a sample python3 terminal command is as follows:
 
     python3 classify_quad_2p2.py -qi1 1.0 -qi2 1.0 -qo 1.0 -ali1o 0.2 -ali2o 0.2 -ei1 0.0 -ei2 0.0 -eo 0.0 -ii1i2 0.0 -ii1o 0.0 -ii2o 0.0
