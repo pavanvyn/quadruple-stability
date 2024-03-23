@@ -39,12 +39,57 @@ It is also possible to import the two MLP classifiers to a custom python3 script
 
     mlp_2p2_stable = mlp_classifier_2p2(mlp_2p2_pfile, qi1, qi2, qo, ali1o, ali2o, ei1, ei2, eo, ii1i2, ii1o, ii2o)
     mlp_3p1_stable = mlp_classifier_3p1(mlp_2p2_pfile, qi, qm, qo, alim, almo, ei, em, eo, iim, iio, imo)
-
+    
     # mlp_2p2_stable, mlp_3p1_stable store True if stable, False if unstable
 
 
-## Implementing our classifiers in C (or C++)
+## Implementing our classifiers in `C`/`C++`
 
+One way to include our classifiers in `C` is to use a `python` interface. This is done by including the `Python.h` header file. This should already be present in your system by default, but if not, python3-dev should be installed. `classify_quad_2p2_wrapper.c` and `classify_quad_3p1_wrapper.c` implement this and should be compiled as folllows:
+
+    gcc classify_quad_2p2_wrapper.c -o classify_quad_2p2_wrapper.out -I /usr/include/python3.10 -lpython3.10    
+    gcc classify_quad_3p1_wrapper.c -o classify_quad_3p1_wrapper.out -I /usr/include/python3.10 -lpython3.10
+
+The `-I` flag is only necessary if the `python` header files are not in the system path, and the `-lpython3.10` flag allows `C` to interact with `python3` (3.10.0 or higher). To include the wrapper script in a custom `C`/`C++` script, it is sufficient to include the header files `classify_quad_2p2_wrapper.h` or `classify_quad_3p1_wrapper.h`. An example is as follows:
+
+    #include "classify_quad_2p2_wrapper.h"
+    #include "classify_quad_3p1_wrapper.h"
+
+    int main() {
+        char mlp_2p2_pfile[] = "./mlp_model_3p1_ghost_v1.2.2.pkl";
+        char mlp_3p1_pfile[] = "./mlp_model_2p2_ghost_v1.2.2.pkl";
+
+        double mratio_inner1, mratio_inner2, mratio_outer, 
+            aratio_inner1_outer, aratio_inner2_outer, 
+            ecc_inner1, ecc_inner2, ecc_outer, 
+            inc_inner1_inner2, inc_inner1_outer, inc_inner2_outer;
+        double mratio_inner, mratio_intermediate, mratio_outer, 
+            aratio_inner_intermediate, aratio_intermediate_outer,
+            ecc_inner, ecc_intermediate, ecc_outer, 
+            inc_inner_intermediate, inc_inner_outer, inc_intermediate_outer;
+            
+        // define these quantities
+
+        int mlp_2p2_stable = mlp_classifier_2p2(mlp_2p2_pfile, mratio_inner1, mratio_inner2, mratio_outer, 
+                                        aratio_inner1_outer, aratio_inner2_outer, 
+                                        ecc_inner1, ecc_inner2, ecc_outer, 
+                                        inc_inner1_inner2, inc_inner1_outer, inc_inner2_outer);
+        int mlp_3p1_stable = mlp_classifier_3p1(mlp_3p1_pfile, mratio_inner, mratio_intermediate, mratio_outer, 
+                                        aratio_inner_intermediate, aratio_intermediate_outer, 
+                                        ecc_inner, ecc_intermediate, ecc_outer, 
+                                        inc_inner_intermediate, inc_inner_outer, inc_intermediate_outer);
+
+        // mlp_2p2_stable, mlp_3p1_stable store 1 if stable, 0 if unstable
+
+        return 0;
+    }
+
+This custom script (`C` and `C++` respectively) is compile similarly:
+
+    gcc my_program.c classify_quad_2p2_wrapper.c -o my_program.out -I /usr/include/python3.10 -lpython3.10
+    gcc my_program.c classify_quad_3p1_wrapper.c -o my_program.out -I /usr/include/python3.10 -lpython3.10
+    g++ my_program.cpp classify_quad_2p2_wrapper.c -o my_program.out -I /usr/include/python3.10 -lpython3.10
+    g++ my_program.cpp classify_quad_3p1_wrapper.c -o my_program.out -I /usr/include/python3.10 -lpython3.10
 
 
 ## Citing our work
