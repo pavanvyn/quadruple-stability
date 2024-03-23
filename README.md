@@ -39,6 +39,9 @@ It is also possible to import the two MLP classifiers to a custom python3 script
 
     # mlp_2p2_stable, mlp_3p1_stable store True if stable, False if unstable
 
+
+## Citing our work
+
 If these classification models are used for research, please cite our papers - https://ui.adsabs.harvard.edu/abs/2023arXiv230109930V/abstract (mlp_model_2p2_ghost.pkl and mlp_model_3p1_ghost.pkl).
 
 Enjoy classifying!
