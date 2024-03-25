@@ -99,4 +99,4 @@ int main() {
     return 0;
 }
 
-// gcc classify_quad_2p2_wrapper.c -o classify_quad_2p2_wrapper.out -I/usr/include/python3.10 -lpython3.10
+// gcc classify_quad_2p2_wrapper.c -o classify_quad_2p2_wrapper.out -I /usr/include/python3.10 -lpython3.10
