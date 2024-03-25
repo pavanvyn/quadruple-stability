@@ -45,12 +45,12 @@ It is also possible to import the two MLP classifiers to a custom python3 script
 
 ## Implementing our classifiers in `C`/`C++`
 
-One way to include our classifiers in `C` is to use a `python` interface. This is done by including the `Python.h` header file. This should already be present in your system by default, but if not, python3-dev should be installed. `classify_quad_2p2_wrapper.c` and `classify_quad_3p1_wrapper.c` implement this and should be compiled as folllows:
+One way to include our classifiers in `C` is to use a `python` interface. This is done by including the `Python.h` header file. This should already be present in your system by default, but if not, python3-dev should be installed. `classify_quad_2p2_wrapper.c` and `classify_quad_3p1_wrapper.c` implement this and should be compiled as follows:
 
     gcc classify_quad_2p2_wrapper.c -o classify_quad_2p2_wrapper.out -I /usr/include/python3.10 -lpython3.10    
     gcc classify_quad_3p1_wrapper.c -o classify_quad_3p1_wrapper.out -I /usr/include/python3.10 -lpython3.10
 
-The `-I` flag is only necessary if the `python` header files are not in the system path, and the `-lpython3.10` flag allows `C` to interact with `python3` (3.10.0 or higher). To include the wrapper script in a custom `C`/`C++` script, it is sufficient to include the header files `classify_quad_2p2_wrapper.h` or `classify_quad_3p1_wrapper.h`. An example is as follows:
+The `-I` flag is only necessary if the `python` header files are not in the system path, and the `-lpython3.10` flag allows `C` to interact with `python3` (3.10.0 or higher). To include the wrapper script in a custom `C`/`C++` script, it is sufficient to include the header files `classify_quad_2p2_wrapper.h` or `classify_quad_3p1_wrapper.h`. In this case, comment out/remove the `main()` function from `classify_quad_2p2_wrapper.c` or `classify_quad_3p1_wrapper.c`. An example is as follows:
 
     #include "classify_quad_2p2_wrapper.h"
     #include "classify_quad_3p1_wrapper.h"
