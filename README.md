@@ -1,6 +1,6 @@
 # Stability classification of quadruple-star systems
 
-This repository contains two simple `python3` (3.10.0 or higher) modules to check if a given configuration of either a 2+2 or a 3+1 quadruple system, respectively, is dynamically stable. Please refer to Vynatheya et al. (2022) (see https://ui.adsabs.harvard.edu/abs/2022MNRAS.516.4146V/abstract) and Vynatheya et al. (2023) (see https://ui.adsabs.harvard.edu/abs/2023arXiv230109930V/abstract) for details regarding the multi-layer perceptron classifier. A `C`/`C++` interface is also provided.
+This repository contains two simple `python3` (3.10.0 or higher) modules to check if a given configuration of either a 2+2 or a 3+1 quadruple system, respectively, is dynamically stable. Please refer to Vynatheya et al. (2023) (see https://ui.adsabs.harvard.edu/abs/2023arXiv230109930V/abstract) for details regarding the multi-layer perceptron classifier. A `C`/`C++` interface is also provided.
 
 The only non-basic package require to use the code is a compatible version (1.0.2 or 1.2.2) of the scikit-learn package (the latest version should also work, but throws a warning of potential incompatibility), which can be installed using the following terminal command:
 
@@ -82,6 +82,6 @@ This custom script (`C` and `C++` respectively) is compiled similarly:
 
 ## Citing our work
 
-If these classification models are used for research, please cite our papers - https://ui.adsabs.harvard.edu/abs/2023arXiv230109930V/abstract (mlp_model_2p2_ghost.pkl and mlp_model_3p1_ghost.pkl).
+If these classification models are used for research, please cite our paper - https://ui.adsabs.harvard.edu/abs/2023arXiv230109930V/abstract (mlp_model_2p2_ghost.pkl and mlp_model_3p1_ghost.pkl).
 
 Enjoy classifying!
