@@ -72,7 +72,7 @@ The `-I` flag is only necessary if the `python` header files are not in the syst
         return 0;
     }
 
-This custom script (`C` and `C++` respectively) is compile similarly:
+This custom script (`C` and `C++` respectively) is compiled similarly:
 
     gcc my_program.c classify_quad_2p2_wrapper.c -o my_program.out -I /usr/include/python3.10 -lpython3.10
     gcc my_program.c classify_quad_3p1_wrapper.c -o my_program.out -I /usr/include/python3.10 -lpython3.10
