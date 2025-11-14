@@ -67,7 +67,7 @@ The `-I` flag is only necessary if the `python` header files are not in the syst
         int mlp_2p2_stable = mlp_classifier_2p2(mlp_2p2_pfile, qi1, qi2, qo, ali1o, ali2o, ei1, ei2, eo, ii1i2, ii1o, ii2o);
         int mlp_3p1_stable = mlp_classifier_3p1(mlp_3p1_pfile, qi, qm, qo, alim, almo, ei, em, eo, iim, iio, imo);
 
-        // mlp_2p2_stable, mlp_3p1_stable store 0 if stable, 1 if unstable
+        // mlp_2p2_stable, mlp_3p1_stable store 1 if stable, 0 if unstable
 
         return 0;
     }
