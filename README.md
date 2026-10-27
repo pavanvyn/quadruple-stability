@@ -88,6 +88,8 @@ This custom script (`C` and `C++` respectively) is compiled similarly:
 ```console
 gcc my_program.c classify_quad_2p2_wrapper.c -o my_program.out -I /usr/include/python3.10 -lpython3.10
 gcc my_program.c classify_quad_3p1_wrapper.c -o my_program.out -I /usr/include/python3.10 -lpython3.10
+```
+```console
 g++ my_program.cpp classify_quad_2p2_wrapper.c -o my_program.out -I /usr/include/python3.10 -lpython3.10
 g++ my_program.cpp classify_quad_3p1_wrapper.c -o my_program.out -I /usr/include/python3.10 -lpython3.10
 ```
