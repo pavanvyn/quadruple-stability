@@ -96,6 +96,6 @@ g++ my_program.cpp classify_quad_3p1_wrapper.c -o my_program.out -I /usr/include
 
 ## Citing our work
 
-If these classification models are used for research, please cite our paper - [Vynatheya et al. (2023)](https://ui.adsabs.harvard.edu/abs/2023arXiv230109930V/abstract) (mlp_model_2p2_ghost.pkl and mlp_model_3p1_ghost.pkl).
+If these classification models are used for research, please cite our paper - [Vynatheya et al. (2023)](https://ui.adsabs.harvard.edu/abs/2023arXiv230109930V/abstract) (`mlp_model_2p2_ghost.pkl` and `mlp_model_3p1_ghost.pkl`).
 
 Enjoy classifying!
